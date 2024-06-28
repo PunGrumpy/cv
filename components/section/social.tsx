@@ -20,7 +20,7 @@ type SocialLink = {
 
 type Contact = {
   email?: string
-  tel?: string
+  phone?: string
   social: SocialLink[]
 }
 
@@ -38,9 +38,9 @@ export default function SocialSection({ contact }: SocialSectionProps) {
           </Link>
         </Button>
       )}
-      {contact.tel && (
+      {contact.phone && (
         <Button className="size-8" variant="outline" size="icon" asChild>
-          <Link href={`tel:${contact.tel}`}>
+          <Link href={`tel:${contact.phone}`}>
             <PhoneIcon className="size-4" />
           </Link>
         </Button>

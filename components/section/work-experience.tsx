@@ -4,11 +4,12 @@ import { Section } from '../ui/section'
 import Link from 'next/link'
 
 type WorkExperience = {
+  id: number
   company: string
   link: string
-  badges: string[]
-  start: string
-  end?: string
+  badge: string[]
+  startYear: string
+  endYear?: string
   title: string
   description: string
 }
@@ -24,7 +25,7 @@ export default function WorkExperienceSection({
     <Section>
       <h2 className="text-xl font-bold">Work Experience</h2>
       {work.map(work => (
-        <Card key={work.company}>
+        <Card key={String(work.id)}>
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
@@ -32,7 +33,7 @@ export default function WorkExperienceSection({
                   {work.company}
                 </Link>
                 <span className="inline-flex gap-x-1">
-                  {work.badges.map(badge => (
+                  {work.badge.map(badge => (
                     <Badge
                       variant="secondary"
                       className="align-middle text-xs print:text-[8px] print:leading-tight print:px-1 print:py-0.5"
@@ -44,7 +45,7 @@ export default function WorkExperienceSection({
                 </span>
               </h3>
               <div className="text-sm tabular-nums text-gray-500">
-                {work.start} - {work.end ?? 'Present'}
+                {work.startYear} - {work.endYear || 'Present'}
               </div>
             </div>
             <h4 className="font-mono text-sm leading-none print:text-[12px]">

@@ -9,7 +9,7 @@ datasource db {
 }
 
 model Resume {
-  id                 Int    @id @default(autoincrement())
+  id                 Int         @id @default(autoincrement())
   name               String
   initials           String
   location           String
@@ -18,9 +18,67 @@ model Resume {
   summary            String
   avatarUrl          String
   personalWebsiteUrl String
-  contact            Json
-  education          Json
-  work               Json
-  skills             Json
-  projects           Json
+  contactId          Int
+  contact            Contact     @relation(fields: [contactId], references: [id])
+  education          Education[]
+  work               Work[]
+  skills             Skill[]
+  projects           Project[]
+}
+
+model Contact {
+  id     Int      @id @default(autoincrement())
+  email  String
+  phone  String?
+  social Social[]
+  Resume Resume[]
+}
+
+model Social {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  icon      String
+  contactId Int?
+  Contact   Contact? @relation(fields: [contactId], references: [id])
+}
+
+model Education {
+  id        Int     @id @default(autoincrement())
+  school    String
+  degree    String
+  startYear String
+  endYear   String?
+  resumeId  Int?
+  Resume    Resume? @relation(fields: [resumeId], references: [id])
+}
+
+model Work {
+  id          Int      @id @default(autoincrement())
+  company     String
+  link        String
+  badge       String[]
+  title       String
+  startYear   String
+  endYear     String?
+  description String
+  resumeId    Int?
+  Resume      Resume?  @relation(fields: [resumeId], references: [id])
+}
+
+model Skill {
+  id       Int     @id @default(autoincrement())
+  name     String
+  resumeId Int?
+  Resume   Resume? @relation(fields: [resumeId], references: [id])
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  techStack   String[]
+  description String
+  link        String
+  resumeId    Int?
+  Resume      Resume?  @relation(fields: [resumeId], references: [id])
 }
