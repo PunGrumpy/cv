@@ -48,7 +48,7 @@ export const CommandMenu = ({ links }: Props) => {
 
     document.addEventListener('keydown', down)
     return () => document.removeEventListener('keydown', down)
-  }, [theme, toggleTheme])
+  }, [toggleTheme])
 
   return (
     <>
