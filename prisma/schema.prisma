@@ -4,12 +4,23 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-model User {
-  id       String @id @default(cuid())
-  email    String @unique
-  password String
+model Resume {
+  id                 Int    @id @default(autoincrement())
+  name               String
+  initials           String
+  location           String
+  locationUrl        String
+  about              String
+  summary            String
+  avatarUrl          String
+  personalWebsiteUrl String
+  contact            Json
+  education          Json
+  work               Json
+  skills             Json
+  projects           Json
 }
