@@ -44,12 +44,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <div className="flex flex-col min-h-screen">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
           </ThemeProvider>
         </div>
