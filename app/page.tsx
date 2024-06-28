@@ -8,6 +8,7 @@ import EducationSection from '../components/section/education'
 import SkillSection from '../components/section/skill'
 import ProjectSection from '../components/section/project'
 import { getResume } from '../lib/resume'
+import Link from 'next/link'
 
 async function getData() {
   const data = await getResume().then(resume => resume)
@@ -28,14 +29,14 @@ export default async function Page() {
               {resume.about}
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
-              <a
+              <Link
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={resume.locationLink}
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
                 {resume.location}
-              </a>
+              </Link>
             </p>
             <SocialSection contact={resume.contact} />
           </div>

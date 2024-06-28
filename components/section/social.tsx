@@ -33,16 +33,16 @@ export default function SocialSection({ contact }: SocialSectionProps) {
     <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
       {contact.email && (
         <Button className="size-8" variant="outline" size="icon" asChild>
-          <a href={`mailto:${contact.email}`}>
+          <Link href={`mailto:${contact.email}`}>
             <MailIcon className="size-4" />
-          </a>
+          </Link>
         </Button>
       )}
       {contact.tel && (
         <Button className="size-8" variant="outline" size="icon" asChild>
-          <a href={`tel:${contact.tel}`}>
+          <Link href={`tel:${contact.tel}`}>
             <PhoneIcon className="size-4" />
-          </a>
+          </Link>
         </Button>
       )}
       {contact.social.map(social => {
