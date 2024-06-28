@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
   title: 'Curriculum Vitae',
-  description: 'A simple CV template',
+  description: 'A minimalist CV page',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
