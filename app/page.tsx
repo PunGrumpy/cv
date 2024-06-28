@@ -11,7 +11,7 @@ import { getResume } from '../lib/resume'
 import Link from 'next/link'
 
 async function getData() {
-  const data = await getResume().then(resume => resume)
+  const data = await getResume()
   const resume = JSON.parse(JSON.stringify(data))
   return resume
 }
@@ -25,47 +25,69 @@ export default async function Page() {
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{resume.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
-              {resume.about}
-            </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
-              <Link
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href={resume.locationUrl}
-                target="_blank"
-              >
-                <GlobeIcon className="size-3" />
-                {resume.location}
-              </Link>
-            </p>
-            <SocialSection contact={resume.contact} />
+            {resume.about && (
+              <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+                {resume.about}
+              </p>
+            )}
+            {resume.location && resume.locationUrl && (
+              <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+                <Link
+                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  href={resume.locationUrl}
+                  target="_blank"
+                >
+                  <GlobeIcon className="size-3" />
+                  {resume.location}
+                </Link>
+              </p>
+            )}
+            {resume.contact && <SocialSection contact={resume.contact} />}
           </div>
-          <Avatar className="size-28">
-            <AvatarImage alt={resume.name} src={resume.avatarUrl} />
-            <AvatarFallback>{resume.initials}</AvatarFallback>
-          </Avatar>
+          {resume.avatarUrl ? (
+            <Avatar className="size-28">
+              <AvatarImage alt={resume.name} src={resume.avatarUrl} />
+              <AvatarFallback>{resume.initials}</AvatarFallback>
+            </Avatar>
+          ) : (
+            <AvatarFallback className="size-28">
+              {resume.initials}
+            </AvatarFallback>
+          )}
         </div>
-        <AboutSection summary={resume.summary} />
-        <WorkExperienceSection work={resume.work} />
-        <EducationSection education={resume.education} />
-        <SkillSection skills={resume.skills} />
-        <ProjectSection projects={resume.projects} />
+        {resume.summary && <AboutSection summary={resume.summary} />}
+        {resume.work && resume.work.length > 0 && (
+          <WorkExperienceSection work={resume.work} />
+        )}
+        {resume.education && resume.education.length > 0 && (
+          <EducationSection education={resume.education} />
+        )}
+        {resume.skills && resume.skills.length > 0 && (
+          <SkillSection skills={resume.skills} />
+        )}
+        {resume.projects && resume.projects.length > 0 && (
+          <ProjectSection projects={resume.projects} />
+        )}
       </section>
 
-      <CommandMenu
-        links={[
-          {
-            url: resume.personalWebsiteUrl,
-            title: 'Personal Website'
-          },
-          ...resume.contact.social.map(
-            (socialMediaLink: { name: string; url: string }) => ({
-              url: socialMediaLink.url,
-              title: socialMediaLink.name
-            })
-          )
-        ]}
-      />
+      {resume.contact &&
+        resume.contact.social &&
+        resume.contact.social.length > 0 && (
+          <CommandMenu
+            links={[
+              {
+                url: resume.personalWebsiteUrl,
+                title: 'Personal Website'
+              },
+              ...resume.contact.social.map(
+                (socialMediaLink: { name: string; url: string }) => ({
+                  url: socialMediaLink.url,
+                  title: socialMediaLink.name
+                })
+              )
+            ]}
+          />
+        )}
     </main>
   )
 }
