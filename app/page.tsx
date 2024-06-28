@@ -1,13 +1,13 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { CommandMenu } from '@/components/command-menu'
+import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
+import { CommandMenu } from '../components/command-menu'
 import { GlobeIcon } from 'lucide-react'
-import SocialSection from '@/components/section/social'
-import AboutSection from '@/components/section/about'
-import WorkExperienceSection from '@/components/section/work-experience'
-import EducationSection from '@/components/section/education'
-import SkillSection from '@/components/section/skill'
-import ProjectSection from '@/components/section/project'
-import { getResume } from '@/lib/resume'
+import SocialSection from '../components/section/social'
+import AboutSection from '../components/section/about'
+import WorkExperienceSection from '../components/section/work-experience'
+import EducationSection from '../components/section/education'
+import SkillSection from '../components/section/skill'
+import ProjectSection from '../components/section/project'
+import { getResume } from '../lib/resume'
 
 async function getData() {
   const data = await getResume().then(resume => resume)

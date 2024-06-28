@@ -1,6 +1,6 @@
-import { Card, CardHeader, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Section } from '@/components/ui/section'
+import { Card, CardHeader, CardContent } from '../ui/card'
+import { Badge } from '../ui/badge'
+import { Section } from '../ui/section'
 
 type WorkExperience = {
   company: string

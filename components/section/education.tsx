@@ -1,5 +1,5 @@
-import { Card, CardHeader, CardContent } from '@/components/ui/card'
-import { Section } from '@/components/ui/section'
+import { Card, CardHeader, CardContent } from '../ui/card'
+import { Section } from '../ui/section'
 
 type Education = {
   school: string

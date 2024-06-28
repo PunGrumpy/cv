@@ -10,7 +10,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut
-} from '@/components/ui/command'
+} from './ui/command'
 import { Button } from './ui/button'
 import { CommandIcon } from 'lucide-react'
 import { DialogDescription, DialogTitle } from './ui/dialog'

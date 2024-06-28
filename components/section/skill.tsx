@@ -1,5 +1,5 @@
-import { Badge } from '@/components/ui/badge'
-import { Section } from '@/components/ui/section'
+import { Badge } from '../ui/badge'
+import { Section } from '../ui/section'
 
 type SkillSectionProps = {
   skills: string[]
