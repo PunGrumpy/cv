@@ -9,15 +9,22 @@ import SkillSection from '@/components/section/skill'
 import ProjectSection from '@/components/section/project'
 
 async function getData() {
-  const response = await fetch(`${process.env.URL}/api/resume`, {
+  const apiUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000/api/resume'
+      : process.env.NEXT_PUBLIC_API_URL || '/api/resume'
+
+  const response = await fetch(apiUrl, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
-    },
-    next: {
-      revalidate: 3000
     }
   })
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch resume data')
+  }
+
   const { resume } = await response.json()
   return resume
 }
