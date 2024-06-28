@@ -31,7 +31,7 @@ export default async function Page() {
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <Link
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href={resume.locationLink}
+                href={resume.locationUrl}
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
