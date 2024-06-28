@@ -57,7 +57,7 @@ export const CommandMenu = ({ links }: Props) => {
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">{isMac ? '⌘' : 'Ctrl'}</span>J
         </kbd>{' '}
-        to open the command menu.
+        to open the command menu
       </p>
       <Button
         onClick={() => setOpen(open => !open)}
@@ -71,7 +71,7 @@ export const CommandMenu = ({ links }: Props) => {
         <DialogTitle className="sr-only">
           Command Menu
           <DialogDescription>
-            Press {isMac ? '⌘' : 'Ctrl'}J to open the command menu.
+            Press {isMac ? '⌘' : 'Ctrl'}J to open the command menu
           </DialogDescription>
         </DialogTitle>
         <CommandInput placeholder="Type a command or search..." />
