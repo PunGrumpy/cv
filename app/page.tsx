@@ -7,14 +7,8 @@ import WorkExperienceSection from '../components/section/work-experience'
 import EducationSection from '../components/section/education'
 import SkillSection from '../components/section/skill'
 import ProjectSection from '../components/section/project'
-import { getResume } from '../lib/resume'
 import Link from 'next/link'
-
-async function getData() {
-  const data = await getResume()
-  const resume = JSON.parse(JSON.stringify(data))
-  return resume
-}
+import { getData } from './actions'
 
 export default async function Page() {
   const resume = await getData()

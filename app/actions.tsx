@@ -1,4 +1,6 @@
-import prisma from './prisma'
+'use server'
+
+import prisma from '@/lib/prisma'
 
 export async function getResume() {
   const resume = await prisma.resume.findFirst({
@@ -33,4 +35,9 @@ export async function getResume() {
   })
 
   return resume
+}
+
+export async function getData() {
+  const data = await getResume()
+  return JSON.parse(JSON.stringify(data))
 }
