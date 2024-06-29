@@ -1,6 +1,6 @@
 # 📃 Curriculum Vitae Website
 
-Welcome to my Curriculum Vitae (CV) website! This is a single-page application designed to showcase my professional background, including my skills, education, work experience, and projects.
+Welcome to my Curriculum Vitae (CV) website! This single-page application is designed to showcase my professional background, including my skills, education, work experience, and projects.
 
 [![Curriculum Vitae Website](/public/preview.png)](https://cv.pungrumpy.com/)
 
@@ -25,7 +25,7 @@ Welcome to my Curriculum Vitae (CV) website! This is a single-page application d
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v20 or higher) - JavaScript runtime
+- [Node.js](https://nodejs.org/) (v20 or higher)
 - [Bun](https://bun.sh/) - Task runner for Node.js projects
 
 ### Installation
@@ -60,7 +60,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## 📂 Project Structure
 
-Brief overview of the project's structure:
+Here's an overview of the project's structure:
 
 ```plaintext
 cv/
@@ -90,13 +90,6 @@ Contributions are welcome! If you have suggestions for improvements or encounter
 ## 📝 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## 📧 Contact
-
-For any inquiries or feedback, feel free to reach out:
-
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
 
 ---
 
