@@ -5,6 +5,7 @@ import '@/app/globals.css'
 import { cn } from '../lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from '../components/theme-provider'
+import { Analytics } from '@vercel/analytics/react'
 
 export const viewport = {
   themeColor: [
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <div className="flex flex-col min-h-screen">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
+            <Analytics />
           </ThemeProvider>
         </div>
       </body>
