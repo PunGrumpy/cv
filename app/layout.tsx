@@ -14,9 +14,6 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
-    : new URL('http://localhost:3000'),
   title: {
     default: 'Curriculum Vitae',
     template: `%s | Curriculum Vitae`
@@ -30,6 +27,8 @@ export const metadata: Metadata = {
   robots: 'follow, index',
   openGraph: {
     title: 'Curriculum Vitae',
+    siteName: 'Curriculum Vitae',
+    url: 'https://cv.pungrumpy.com',
     description: 'A minimalist CV page',
     type: 'website',
     images: [
