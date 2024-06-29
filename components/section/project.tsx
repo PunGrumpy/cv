@@ -5,9 +5,7 @@ type Project = {
   title: string
   description: string
   techStack: string[]
-  link: {
-    url: string
-  }
+  link: string
 }
 
 type ProjectSectionProps = {
@@ -25,7 +23,7 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
             title={project.title}
             description={project.description}
             tags={project.techStack}
-            link={project.link.url}
+            link={project.link}
           />
         ))}
       </div>
