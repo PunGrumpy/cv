@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
 import { CommandMenu } from '../components/command-menu'
-import { AlertCircle, GlobeIcon } from 'lucide-react'
+import { GlobeIcon } from 'lucide-react'
 import SocialSection from '../components/section/social'
 import AboutSection from '../components/section/about'
 import WorkExperienceSection from '../components/section/work-experience'
