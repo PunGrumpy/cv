@@ -81,7 +81,7 @@ cv/
 - [x] **Dynamic Content**: Easily update and manage content via Prisma.
 - [x] **Modern UI**: Sleek design using Shadcn/ui components.
 - [x] **Dark Mode**: Toggle between light and dark themes.
-- [ ] **Real-time Database Updates**: Automatically refresh content on changes.
+- [x] **Real-time Database Updates**: Automatically refresh content on changes.
 
 ## 🤝 Contributing
 
