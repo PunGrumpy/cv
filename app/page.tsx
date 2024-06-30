@@ -11,6 +11,8 @@ import Link from 'next/link'
 import AlertSection from '@/components/section/alert'
 import { fetchResume } from './actions'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page() {
   const resume = await fetchResume()
 

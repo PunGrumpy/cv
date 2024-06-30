@@ -2,8 +2,6 @@
 
 import prisma from '@/lib/prisma'
 
-export const dynamic = 'force-dynamic'
-
 export async function fetchResume() {
   const resume = await prisma.resume.findUnique({
     where: { id: 1, initials: 'NK' },
