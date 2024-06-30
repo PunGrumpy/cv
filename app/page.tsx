@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
 import { CommandMenu } from '../components/command-menu'
-import { GlobeIcon } from 'lucide-react'
+import { AlertCircle, GlobeIcon } from 'lucide-react'
 import SocialSection from '../components/section/social'
 import AboutSection from '../components/section/about'
 import WorkExperienceSection from '../components/section/work-experience'
@@ -9,6 +9,7 @@ import SkillSection from '../components/section/skill'
 import ProjectSection from '../components/section/project'
 import Link from 'next/link'
 import prisma from '@/lib/prisma'
+import AlertSection from '@/components/section/alert'
 
 export default async function Page() {
   const resume = await prisma.resume.findUnique({
@@ -51,7 +52,11 @@ export default async function Page() {
     return (
       <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
         <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4">
-          <h1 className="text-2xl font-bold">Resume not found</h1>
+          <div className="flex items-center justify-between">
+            <div className="flex-1 space-y-1.5">
+              <AlertSection />
+            </div>
+          </div>
         </section>
       </main>
     )
