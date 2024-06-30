@@ -8,17 +8,63 @@ import EducationSection from '../components/section/education'
 import SkillSection from '../components/section/skill'
 import ProjectSection from '../components/section/project'
 import Link from 'next/link'
-import { getData } from './actions'
+import prisma from '@/lib/prisma'
 
 export default async function Page() {
-  const resume = await getData()
+  const resume = await prisma.resume.findUnique({
+    where: { id: 1, initials: 'NK' },
+    include: {
+      contact: {
+        select: {
+          email: true,
+          social: { select: { name: true, url: true, icon: true } }
+        }
+      },
+      work: {
+        select: {
+          id: true,
+          company: true,
+          link: true,
+          badge: true,
+          startYear: true,
+          endYear: true,
+          title: true,
+          description: true
+        }
+      },
+      education: {
+        select: { school: true, degree: true, startYear: true, endYear: true }
+      },
+      skills: { select: { id: true, name: true } },
+      projects: {
+        select: {
+          title: true,
+          techStack: true,
+          description: true,
+          link: true
+        }
+      }
+    }
+  })
+
+  if (!resume) {
+    return (
+      <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+        <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4">
+          <h1 className="text-2xl font-bold">Resume not found</h1>
+        </section>
+      </main>
+    )
+  }
 
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{resume.name}</h1>
+            {resume.name && (
+              <h1 className="text-2xl font-bold">{resume.name}</h1>
+            )}
             {resume.about && (
               <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
                 {resume.about}

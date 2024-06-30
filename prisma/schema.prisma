@@ -48,7 +48,7 @@ model Education {
   school    String
   degree    String
   startYear String
-  endYear   String?
+  endYear   String
   resumeId  Int?
   Resume    Resume? @relation(fields: [resumeId], references: [id])
 }

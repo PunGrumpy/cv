@@ -9,7 +9,7 @@ type WorkExperience = {
   link: string
   badge: string[]
   startYear: string
-  endYear?: string
+  endYear?: string | null
   title: string
   description: string
 }
