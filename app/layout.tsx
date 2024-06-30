@@ -15,9 +15,11 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
-    : undefined,
+  metadataBase: process.env.NEXT_PUBLIC_VERCEL_URL
+    ? new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`)
+    : process.env.NEXT_PUBLIC_LOCAL_URL
+      ? new URL(process.env.NEXT_PUBLIC_LOCAL_URL)
+      : undefined,
   title: {
     default: 'Curriculum Vitae',
     template: `%s | Curriculum Vitae`
