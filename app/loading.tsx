@@ -3,10 +3,10 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
-      <Card className="max-w-md w-full">
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <Card className="w-full max-w-md">
         <CardContent className="flex flex-col items-center">
-          <Spinner className="size-16 text-foreground my-4" />
+          <Spinner className="my-4 size-16 text-foreground" />
           <p className="text-muted-foreground">
             Please wait while we load the content.
           </p>

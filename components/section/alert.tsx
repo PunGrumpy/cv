@@ -6,7 +6,7 @@ export default function AlertSection() {
   return (
     <Section>
       <Alert>
-        <AlertCircleIcon className="size-5 text-warning" />
+        <AlertCircleIcon className="text-warning size-5" />
         <AlertTitle>Resume not found</AlertTitle>
         <AlertDescription>
           Please create a resume to view it here.
