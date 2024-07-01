@@ -1,7 +1,8 @@
-import { Card, CardHeader, CardContent } from '../ui/card'
-import { Badge } from '../ui/badge'
-import { Section } from '../ui/section'
 import Link from 'next/link'
+
+import { Badge } from '../ui/badge'
+import { Card, CardContent, CardHeader } from '../ui/card'
+import { Section } from '../ui/section'
 
 type WorkExperience = {
   id: number

@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardContent } from '../ui/card'
+import { Card, CardContent, CardHeader } from '../ui/card'
 import { Section } from '../ui/section'
 
 type Education = {

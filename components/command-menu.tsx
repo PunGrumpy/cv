@@ -1,6 +1,10 @@
 'use client'
 
+import { CommandIcon } from 'lucide-react'
+import { useTheme } from 'next-themes'
 import * as React from 'react'
+
+import { Button } from './ui/button'
 import {
   CommandDialog,
   CommandEmpty,
@@ -11,10 +15,7 @@ import {
   CommandSeparator,
   CommandShortcut
 } from './ui/command'
-import { Button } from './ui/button'
-import { CommandIcon } from 'lucide-react'
 import { DialogDescription, DialogTitle } from './ui/dialog'
-import { useTheme } from 'next-themes'
 
 interface Props {
   links: { url: string; title: string }[]

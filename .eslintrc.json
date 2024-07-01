@@ -8,6 +8,8 @@
   ],
   "plugins": ["tailwindcss", "simple-import-sort"],
   "rules": {
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "off"
   },

@@ -1,11 +1,12 @@
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-
 import '@/app/globals.css'
-import { cn } from '../lib/utils'
-import type { Metadata } from 'next'
-import { ThemeProvider } from '../components/theme-provider'
+
 import { Analytics } from '@vercel/analytics/react'
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+import type { Metadata } from 'next'
+
+import { ThemeProvider } from '../components/theme-provider'
+import { cn } from '../lib/utils'
 
 export const viewport = {
   themeColor: [

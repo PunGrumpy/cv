@@ -1,9 +1,9 @@
-import { MailIcon, PhoneIcon } from 'lucide-react'
-import { Button } from '../ui/button'
-
 import * as RadixIcons from '@radix-ui/react-icons'
 import { IconProps } from '@radix-ui/react-icons/dist/types'
+import { MailIcon, PhoneIcon } from 'lucide-react'
 import Link from 'next/link'
+
+import { Button } from '../ui/button'
 
 const importIcon = (iconName: string): React.ComponentType<IconProps> => {
   const iconComponent = (

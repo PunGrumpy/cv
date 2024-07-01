@@ -1,12 +1,13 @@
+import Link from 'next/link'
+
+import { Badge } from './ui/badge'
 import {
   Card,
-  CardHeader,
   CardContent,
   CardDescription,
+  CardHeader,
   CardTitle
 } from './ui/card'
-import { Badge } from './ui/badge'
-import Link from 'next/link'
 
 interface Props {
   title: string
