@@ -9,7 +9,7 @@ type ErrorProps = {
   reset: () => void
 }
 
-export default function GlobalError({ error, reset }: ErrorProps) {
+export default function Error({ error, reset }: ErrorProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md">
