@@ -1,17 +1,19 @@
 import { GlobeIcon } from 'lucide-react'
 import Link from 'next/link'
 
+import { fetchResume } from '@/app/actions'
+import { CommandMenu } from '@/components/command-menu'
+import AboutSection from '@/components/section/about'
 import AlertSection from '@/components/section/alert'
+import EducationSection from '@/components/section/education'
+import PrintContactSection from '@/components/section/print-contact'
+import ProjectSection from '@/components/section/project'
+import SkillSection from '@/components/section/skill'
+import SocialSection from '@/components/section/social'
+import WorkExperienceSection from '@/components/section/work-experience'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
-import { CommandMenu } from '../components/command-menu'
-import AboutSection from '../components/section/about'
-import EducationSection from '../components/section/education'
-import ProjectSection from '../components/section/project'
-import SkillSection from '../components/section/skill'
-import SocialSection from '../components/section/social'
-import WorkExperienceSection from '../components/section/work-experience'
-import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
-import { fetchResume } from './actions'
+export const dynamic = 'force-dynamic'
 
 export default async function Page() {
   const { resume, error } = await fetchResume()
@@ -61,6 +63,13 @@ export default async function Page() {
                   ...resume.contact,
                   phone: resume.contact.phone ?? undefined
                 }}
+              />
+            )}
+            {resume.personalWebsiteUrl && resume.contact && (
+              <PrintContactSection
+                personalWebsiteUrl={resume.personalWebsiteUrl}
+                email={resume.contact.email}
+                social={resume.contact.social[0]}
               />
             )}
           </div>
