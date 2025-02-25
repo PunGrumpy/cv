@@ -21,7 +21,7 @@ export default function EducationSection({ education }: EducationSectionProps) {
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="leading-none font-semibold">{education.school}</h3>
-              <div className="text-sm text-gray-500 tabular-nums">
+              <div className="text-muted-foreground text-sm tabular-nums">
                 {education.startYear} - {education.endYear}
               </div>
             </div>
