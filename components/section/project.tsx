@@ -1,5 +1,5 @@
-import { ProjectCard } from '../project-card'
-import { Section } from '../ui/section'
+import { ProjectCard } from '@/components/project-card'
+import { Section } from '@/components/ui/section'
 
 type Project = {
   title: string

@@ -1,7 +1,7 @@
 import { AlertCircleIcon } from 'lucide-react'
 
-import { Alert, AlertDescription, AlertTitle } from '../ui/alert'
-import { Section } from '../ui/section'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Section } from '@/components/ui/section'
 
 export default function AlertSection() {
   return (

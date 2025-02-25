@@ -1,15 +1,15 @@
-import * as RadixIcons from '@radix-ui/react-icons'
-import { IconProps } from '@radix-ui/react-icons/dist/types'
+import * as LucideIcons from 'lucide-react'
+import { LucideProps } from 'lucide-react'
 import { MailIcon, PhoneIcon } from 'lucide-react'
 import Link from 'next/link'
 
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
 
-const importIcon = (iconName: string): React.ComponentType<IconProps> => {
+const importIcon = (iconName: string): React.ComponentType<LucideProps> => {
   const iconComponent = (
-    RadixIcons as Record<string, React.ComponentType<IconProps>>
+    LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>
   )[iconName]
-  return iconComponent || RadixIcons.GlobeIcon
+  return iconComponent || LucideIcons.GlobeIcon
 }
 
 type SocialLink = {

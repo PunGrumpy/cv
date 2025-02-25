@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import { Badge } from '../ui/badge'
-import { Card, CardContent, CardHeader } from '../ui/card'
-import { Section } from '../ui/section'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Section } from '@/components/ui/section'
 
 type WorkExperience = {
   id: number

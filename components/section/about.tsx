@@ -1,4 +1,4 @@
-import { Section } from '../ui/section'
+import { Section } from '@/components/ui/section'
 
 type AboutSectionProps = {
   summary: string
