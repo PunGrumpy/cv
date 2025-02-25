@@ -8,6 +8,7 @@ const Card = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
+    data-slot="card"
     className={cn('bg-card text-card-foreground rounded-lg', className)}
     {...props}
   />
@@ -20,6 +21,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
+    data-slot="card-header"
     className={cn('flex flex-col space-y-1.5', className)}
     {...props}
   />
@@ -32,6 +34,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
+    data-slot="card-title"
     className={cn(
       'text-2xl leading-none font-semibold tracking-tight',
       className
@@ -47,6 +50,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
+    data-slot="card-description"
     className={cn('text-muted-foreground text-sm', className)}
     {...props}
   />
@@ -59,6 +63,7 @@ const CardContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
+    data-slot="card-content"
     className={cn(
       'text-muted-foreground font-mono text-sm text-pretty',
       className
@@ -72,7 +77,12 @@ const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('flex items-center', className)} {...props} />
+  <div
+    ref={ref}
+    data-slot="card-footer"
+    className={cn('flex items-center', className)}
+    {...props}
+  />
 ))
 CardFooter.displayName = 'CardFooter'
 
