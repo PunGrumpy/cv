@@ -30,7 +30,7 @@ type SocialSectionProps = {
 
 export default function SocialSection({ contact }: SocialSectionProps) {
   return (
-    <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+    <div className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden">
       {contact.email && (
         <Button className="size-8" variant="outline" size="icon" asChild>
           <Link href={`mailto:${contact.email}`}>

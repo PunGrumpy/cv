@@ -11,7 +11,7 @@ export default function NotFound() {
   const pathname = usePathname()
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4 sm:px-6 lg:px-8">
+    <div className="bg-background flex min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl">
@@ -24,7 +24,7 @@ export default function NotFound() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="mb-4 text-sm text-muted-foreground">
+          <p className="text-muted-foreground mb-4 text-sm">
             Could not find the requested resource
           </p>
           <Link href="/" passHref replace>

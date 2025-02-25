@@ -29,7 +29,7 @@ export default function WorkExperienceSection({
         <Card key={String(work.id)}>
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+              <h3 className="inline-flex items-center justify-center gap-x-1 leading-none font-semibold">
                 <Link className="hover:underline" href={work.link}>
                   {work.company}
                 </Link>
@@ -45,7 +45,7 @@ export default function WorkExperienceSection({
                   ))}
                 </span>
               </h3>
-              <div className="text-sm tabular-nums text-gray-500">
+              <div className="text-sm text-gray-500 tabular-nums">
                 {work.startYear} - {work.endYear || 'Present'}
               </div>
             </div>

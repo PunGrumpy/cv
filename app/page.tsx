@@ -20,8 +20,8 @@ export default async function Page() {
 
   if (!resume) {
     return (
-      <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-        <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4">
+      <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
+        <section className="bg-background mx-auto w-full max-w-2xl space-y-8 print:space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
               <AlertSection />
@@ -33,20 +33,20 @@ export default async function Page() {
   }
 
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4">
+    <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
+      <section className="bg-background mx-auto w-full max-w-2xl space-y-8 print:space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             {resume.name && (
               <h1 className="text-2xl font-bold">{resume.name}</h1>
             )}
             {resume.about && (
-              <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+              <p className="text-muted-foreground max-w-md font-mono text-sm text-pretty print:text-[12px]">
                 {resume.about}
               </p>
             )}
             {resume.location && resume.locationUrl && (
-              <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+              <p className="text-muted-foreground max-w-md items-center font-mono text-xs text-pretty">
                 <Link
                   className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                   href={resume.locationUrl}
