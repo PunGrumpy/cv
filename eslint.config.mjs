@@ -1,6 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc'
+import prettierConfig from 'eslint-config-prettier'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
-import prettier from 'eslint-plugin-prettier'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -14,7 +14,6 @@ const compat = new FlatCompat({
 /** @type {import("eslint").Linter.Config} */
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  prettier.configs.recommended,
   {
     plugins: {
       'simple-import-sort': simpleImportSort
@@ -26,7 +25,8 @@ const eslintConfig = [
       'simple-import-sort/exports': 'warn',
       'simple-import-sort/imports': 'warn'
     }
-  }
+  },
+  prettierConfig
 ]
 
 export default eslintConfig
