@@ -13,12 +13,10 @@ import WorkExperienceSection from '../components/section/work-experience'
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
 import { fetchResume } from './actions'
 
-export const dynamic = 'force-dynamic'
-
 export default async function Page() {
-  const resume = await fetchResume()
+  const { resume, error } = await fetchResume()
 
-  if (!resume) {
+  if (error || !resume) {
     return (
       <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
         <section className="bg-background mx-auto w-full max-w-2xl space-y-8 print:space-y-4">
@@ -57,7 +55,14 @@ export default async function Page() {
                 </Link>
               </p>
             )}
-            {resume.contact && <SocialSection contact={resume.contact} />}
+            {resume.contact && (
+              <SocialSection
+                contact={{
+                  ...resume.contact,
+                  phone: resume.contact.phone ?? undefined
+                }}
+              />
+            )}
           </div>
           {resume.avatarUrl ? (
             <Avatar className="size-28">
